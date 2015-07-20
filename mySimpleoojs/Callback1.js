@@ -15,7 +15,7 @@ function logStuff (userData) {
     else if ( typeof userData === "object")
     {
         for (var item in userData) {
-            //console.log(item + ": " + userData[item]);
+            console.log(item + ": " + userData[item]);
         }
 
     }
