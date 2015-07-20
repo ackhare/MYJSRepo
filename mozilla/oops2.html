@@ -1,0 +1,48 @@
+<script type="text/javascript">
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript
+/*n JavaScript methods are regular
+function objects that are bound to an object as a property,
+which means they can be invoked "out of the context".
+ */
+
+
+    var Person = function (firstName) {
+        this.firstName = firstName;
+    };
+
+    Person.prototype.sayHello = function() {
+        console.log("Hello, I'm " + this.firstName);
+    };
+
+    var person1 = new Person("Alice");
+    var person2 = new Person("Bob");
+    var helloFunction = person1.sayHello;
+
+    // logs "Hello, I'm Alice"
+    person1.sayHello();
+
+    // logs "Hello, I'm Bob"
+    person2.sayHello();
+
+    // logs "Hello, I'm undefined" (or fails
+    // with a TypeError in strict mode)
+    helloFunction();
+
+    // logs true
+    console.log(helloFunction === person1.sayHello);
+
+    // logs true
+    console.log(helloFunction === Person.prototype.sayHello);
+
+    // logs "Hello, I'm Alice"
+    helloFunction.call(person1);
+
+
+
+    /*
+     Calling it from a variable — helloFunction() — sets this to the global object (window, on browsers).
+      Since that object (probably) doesn't have a firstName property, we end up with "Hello, I'm undefined".
+      (That's in loose mode code; it would be different [an error] in strict mode,
+     but to avoid confusion we won't go into detail here.) Or we can set this explicitly using Function#call (or Function#apply),
+     */
+</script>

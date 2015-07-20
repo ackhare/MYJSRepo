@@ -1,0 +1,34 @@
+<script type="text/javascript">
+/*
+ Another thing that the simple objects (particularly the object literal) is useful for is creating a set of related
+  library functions. This is the same sort of situation where you might create a class full of static functions in C#.
+
+
+
+ */
+
+    var ArrayUtil = {
+        contains : function(array, element)
+        {
+            for(var x=0; x<array .length; x++)
+            {
+                if(array[x] == element)
+                    return true;
+            }
+            return false;
+        },
+        exclude : function(list, items)
+        {
+           console.log("exclude");
+        },
+        makeList : function(list)
+        {
+            console.log("makelist");
+        }
+    }
+    var list = ["A", "B", "C"];
+    alert("Has A? " + ArrayUtil.contains(list, "A"));
+
+
+
+</script>

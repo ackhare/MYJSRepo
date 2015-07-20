@@ -1,0 +1,35 @@
+<script type="text/javascript">
+   //http://helephant.com/2008/08/19/functions-are-first-class-objects-in-javascript/
+    function feedCat()
+    {
+        alert("Kibble, tinned food and water");
+    }
+
+    alert(feedCat instanceof Object);
+
+    feedCat.food = "kibble";
+    alert(feedCat.food);
+    alert(feedCat.constructor);
+
+    // You can store a function in a variable
+    var eveningChore = feedCat;
+    eveningChore();
+
+    // Pass a function as a parameter to another function
+    function doEveningChores(chores)
+    {
+        for(var x=0; x<chores.length; x++)
+            chores[x]();
+    }
+    doEveningChores([feedCat]);
+
+    // return a function from another function
+    function tonightChores()
+    {
+        return feedCat;
+    }
+    var tonight = tonightChores();
+    tonight();
+
+
+</script>

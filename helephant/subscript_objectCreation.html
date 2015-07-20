@@ -1,0 +1,20 @@
+<script>
+ /*   Sometimes subscript syntax can be very useful because the key is indexed with a string.
+ The string can be built at runtime to access an object’s properties without knowing exactly what properties it has.
+For example you could use a foreach loop to iterate through each property in the object or dynamically build the property name:
+  */
+
+
+
+ for(var property in rufus)
+     alert(rufus[property].toString());
+ var myObject = {
+     property1: "chocolate",
+     property2: "cake",
+     property3: "brownies"
+ }
+ for(var x=1; x&lt;4; x++)
+     alert(myObject["property" + x]);
+
+
+</script>

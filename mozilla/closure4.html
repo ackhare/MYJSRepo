@@ -1,0 +1,29 @@
+
+<script type="text/javascript">
+    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures
+    var counter = (function() {
+        var privateCounter = 0;
+        function changeBy(val) {
+            privateCounter += val;
+        }
+        return {
+            increment: function() {
+                changeBy(1);
+            },
+            decrement: function() {
+                changeBy(-1);
+            },
+            value: function() {
+                return privateCounter;
+            }
+        };
+    })();
+
+    alert(counter.value()); /* Alerts 0 */
+    counter.increment();
+    counter.increment();
+    alert(counter.value()); /* Alerts 2 */
+    counter.decrement();
+    alert(counter.value()); /* Alerts 1 */
+
+</script>

@@ -5,7 +5,6 @@
 
 // global variable​
 var allUserData = [];
-
 // generic logStuff function that prints to console​
 function logStuff (userData) {
     if ( typeof userData === "string")

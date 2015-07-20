@@ -24,6 +24,7 @@ function Fruit (theColor, theSweetness, theFruitName, theNativeToLand) {
 var mangoFruit = new Fruit ("Yellow", 8, "Mango", ["South America", "Central America", "West Africa"]);
 mangoFruit.showName(); // This is a Mango.​
 mangoFruit.nativeTo();
+
 //Grown in:South America​
 // Grown in:Central America​
 // Grown in:West Africa​
