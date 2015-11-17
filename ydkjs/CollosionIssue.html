@@ -1,0 +1,21 @@
+
+<script type="text/javascript">
+    /*
+     The assignment inside bar(..) needs to declare a local variable to use, regardless of what identifier name is chosen.
+ var i = 3; would fix the problem (and would create the previously mentioned "shadowed variable" declaration for i). An
+ additional, not alternate, option is to pick another identifier name entirely, such as var j = 3;.
+     */
+function foo() {
+    function bar(a) {
+        i = 3; // changing the `i` in the enclosing scope's for-loop
+        console.log( a + i );
+    }
+
+    for (var i=0; i<10; i++) {
+        bar( i * 2 ); // oops, infinite loop ahead!
+    }
+}
+
+foo();
+
+</script>
