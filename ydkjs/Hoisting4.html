@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        /*
+         Function declarations that appear inside of normal blocks typically hoist to the enclosing scope, rather than being
+conditional as this code implies:
+         However, it's important to note that this behavior is not reliable and is subject to change in future versions of JavaScript
+         , so it's probably best to avoid declaring functions in blocks.
+         */
+        foo(); // "b"
+
+        var a = true;
+        if (a) {
+            function foo() { console.log( "a" ); }
+        }
+        else {
+            function foo() { console.log( "b" ); }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

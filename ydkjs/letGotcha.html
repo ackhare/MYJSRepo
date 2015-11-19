@@ -1,0 +1,42 @@
+
+<script type="text/javascript">
+   /* Because let declarations attach to arbitrary blocks rather than to the enclosing function's scope (or global), there can
+be gotchas where existing code has a hidden reliance on function-scoped var declarations, and replacing the var with let
+may require additional care when refactoring code.
+    */
+
+            var foo = true, baz = 10;
+
+    if (foo) {
+        var bar = 3;
+
+        if (baz > bar) {
+            console.log( baz );
+        }
+
+        // ...
+    }
+   // This code is fairly easily re-factored as:
+    var foo = true, baz = 10;
+
+    if (foo) {
+        var bar = 3;
+
+        // ...
+    }
+
+    if (baz > bar) {
+        console.log( baz );
+    }
+    //But, be careful of such changes when using block-scoped variables:
+            var foo = true, baz = 10;
+
+    if (foo) {
+        let bar = 3;
+
+        if (baz > bar) { // <-- don't forget `bar` when moving!
+            console.log( baz );
+        }
+    }
+
+</script>

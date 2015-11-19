@@ -1,0 +1,25 @@
+
+<script type="text/javascript">
+    /*
+Still another variation of the IIFE inverts the order of things, where the function to execute is given second, after
+the invocation and parameters to pass to it. This pattern is used in the UMD (Universal Module Definition) project. Some
+people find it a little cleaner to understand, though it is slightly more verbose.
+    */
+    var a = 2;
+
+    (function IIFE( def ){
+        def( window );
+    })(function def( global ){
+
+        var a = 3;
+        console.log( a ); // 3
+        console.log( global.a ); // 2
+
+    });
+/*
+ The def function expression is defined in the second-half of the snippet, and then passed as a parameter (also called
+ def) to the IIFE function defined in the first half of the snippet. Finally, the parameter def (the function) is
+ invoked, passing window in as the global parameter.
+
+ */
+</script>

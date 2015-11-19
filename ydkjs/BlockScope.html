@@ -1,0 +1,14 @@
+
+<script type="text/javascript">
+    try {
+        undefined(); // illegal operation to force an exception!
+    }
+    catch (err) {
+        console.log( err ); // works!
+    }
+
+    console.log( err ); // ReferenceError: `err` not found
+/*
+ As you can see, err exists only in the catch clause, and throws an error when you try to reference it elsewhere.
+ */
+</script>

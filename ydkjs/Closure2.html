@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        for (var i=1; i<=5; i++) {
+            setTimeout( function timer(){
+                console.log( i );
+            }, i*1000 );
+        }
+
+        /*
+         The spirit of this code snippet is that we would normally expect for the behavior to be that the numbers "1", "2", .. "5" would be printed out, one at a time, one per second, respectively.
+         In fact, if you run this code, you get "6" printed out 5 times, at the one-second intervals.
+
+         The timeout function callbacks are all running well after the completion of the loop. In fact, as timers go, even if it
+was setTimeout(.., 0) on each iteration, all those function callbacks would still run strictly after the completion of
+the loop, and thus print 6 each time.
+
+What's missing is that we are trying to imply that each iteration of the loop "captures" its own copy of i, at
+the time of the iteration. But, the way scope works, all 5 of those functions, though they are defined
+separately in each loop iteration, all are closed over the same shared global scope, which has, in fact, only
+one i in it. Put that way, of course all functions share a reference to the same i. Something about the loop
+structure tends to confuse us into thinking there's something else more sophisticated at work. There is not.
+There's no difference than if each of the 5 timeout callbacks were just declared one right after the other,
+with no loop at all.
+         */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

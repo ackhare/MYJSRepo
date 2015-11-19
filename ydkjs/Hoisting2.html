@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+       foo(); // 1
+
+var foo;
+
+function foo() {
+    console.log( 1 );
+}
+
+foo = function() {
+    console.log( 2 );
+};
+/*
+ Notice that var foo was the duplicate (and thus ignored) declaration, even though it came before the function foo()...
+declaration, because function declarations are hoisted before normal variables.
+ */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

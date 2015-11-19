@@ -1,0 +1,22 @@
+
+<script type="text/javascript">
+
+    var a = 2;
+
+(function foo(){
+
+    var a = 3;
+
+
+        console.log( a ); // 3
+
+})();
+ //yu can see a was hidden
+console.log( a ); // 2
+
+    /*
+    Now that we have a function as an expression by virtue of wrapping it in a ( ) pair, we can execute that function by
+   adding another () on the end, like (function foo(){ .. })(). The first enclosing ( ) pair makes the function an
+   expression, and the second () executes the function.
+     */
+</script>

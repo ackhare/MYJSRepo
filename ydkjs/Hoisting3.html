@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        /*
+         While multiple/duplicate var declarations are effectively ignored, subsequent function declarations do override previous
+ones.
+         */
+        foo(); // 3
+
+        function foo() {
+            console.log( 1 );
+        }
+
+        var foo = function() {
+            console.log( 2 );
+        };
+
+        function foo() {
+            console.log( 3 );
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
