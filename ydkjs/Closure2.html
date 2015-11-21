@@ -6,9 +6,14 @@
 
     <script>
         for (var i=1; i<=5; i++) {
+            console.log(this);
+            console.log("outer timeout");
             setTimeout( function timer(){
-                console.log( i );
-            }, i*1000 );
+
+                console.log("inner Timeout")
+                console.log(i);
+                console.log(this)
+            },i*1000 );
         }
 
         /*

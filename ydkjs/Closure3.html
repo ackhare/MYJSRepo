@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        //A slight improvemnt over closure2
+        //Things dont improove
+
+        /*
+        We now obviously have more lexical scope. Each timeout function callback is indeed closing over its own
+       per-iteration scope created respectively by each IIFE. It's not enough to have a scope to close over if that
+       scope is empty. Look closely. Our IIFE is just an empty do-nothing scope. It needs something in it to be useful
+       to us.
+
+         */
+
+for (var i=1; i<=5; i++) {
+    (function(){
+        setTimeout( function timer(){
+            console.log( i );
+        }, i*1000 );
+    })();
+}
+        </script>
+    </head>
+</html>

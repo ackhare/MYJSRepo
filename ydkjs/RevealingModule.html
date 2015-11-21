@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        function CoolModule() {
+            var something = "cool";
+            var another = [1, 2, 3];
+
+            function doSomething() {
+                console.log( something );
+            }
+
+            function doAnother() {
+                console.log( another.join( " ! " ) );
+            }
+//note there are two returns
+            return {
+                doSomething: doSomething,
+                doAnother: doAnother
+            };
+        }
+
+        var foo = CoolModule();
+
+        foo.doSomething(); // cool
+        foo.doAnother(); // 1 ! 2 ! 3
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
