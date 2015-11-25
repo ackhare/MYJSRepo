@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        function identify(context) {
+            return context.name.toUpperCase();
+        }
+
+        function speak(context) {
+            var greeting = "Hello, I'm " + identify( context );
+            console.log( greeting );
+        }
+ var me = {
+            name: "Kyle"
+        };
+
+        var you = {
+            name: "Reader"
+        };
+        identify( you ); // READER
+        speak( me ); // Hello, I'm KYLE
+/*
+ However, the this mechanism provides a more elegant way of implicitly "passing along" an object reference, leading to
+ cleaner API design and easier re-use. The more complex your usage pattern is, the more clearly you'll see that passing
+ context around as an explicit parameter is often messier than passing around a this context. When we explore objects
+ and prototypes, you will see the helpfulness of a collection of functions being able to automatically reference the
+ proper context object.
+ */
+    </script>
+</head>
+<body>
+
+</body>
+</html>
