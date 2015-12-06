@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        function foo1(something) {
+            console.log( this.a, something );
+            return this.a + something;
+        }
+
+        var obj = {
+            a: 2
+        };
+
+        var bar = function() {
+            return foo1.apply( obj, arguments );
+        };
+
+        var b = bar( 3 ); // 2 3
+        console.log( b ); // 5
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

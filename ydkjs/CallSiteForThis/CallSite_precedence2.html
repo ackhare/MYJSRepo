@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        /*
+         OK, new binding is more precedent than implicit binding.
+          But do you think new binding is more or less precedent than
+ explicit binding?
+         */
+        function foo(something) {
+            this.a = something;
+        }
+
+        var obj1 = {
+            foo: foo
+        };
+
+        var obj2 = {};
+
+        obj1.foo( 2 );
+        //something has been assigned to 2 and which goes to this.a  so when obj1.foo(2) is done this.a is called
+        console.log( obj1.a ); // 2
+
+        obj1.foo.call( obj2, 3 );
+        console.log( obj2.a ); // 3
+
+        var bar = new obj1.foo( 4 );
+        console.log( obj1.a ); // 2   //It is very important that how behaviour changes on
+        console.log( bar.a ); // 4
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
