@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+
+        var anotherObject = {
+            a: 2
+        };
+
+        // create an object linked to `anotherObject`
+        var myObject = Object.create( anotherObject );
+
+        myObject.a; // 2
+        /*
+        Object.create(..) creates an
+  object with the [[Prototype]] linkage we're examining to the object specified.
+
+         So, we have myObject that is now [[Prototype]] linked to anotherObject. Clearly myObject.a doesn't actually exist, but
+nevertheless, the property access succeeds (being found on anotherObject instead) and indeed finds the value 2.
+         */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        var myObject = { };
+
+        Object.defineProperty(
+                myObject,
+                "a",
+                // make `a` enumerable, as normal
+                { enumerable: true, value: 2 }
+        );
+
+        Object.defineProperty(
+                myObject,
+                "b",
+                // make `b` NON-enumerable
+                { enumerable: false, value: 3 }
+        );
+
+        myObject.b; // 3
+        ("b" in myObject); // true
+        myObject.hasOwnProperty( "b" ); // true
+
+
+
+        for (var k in myObject) {
+            console.log( k, myObject[k] );
+        }
+        // "a" 2
+        //You'll notice that myObject.b in fact exists and has an accessible value, but it doesn't show up in a for..in loop
+//(though, surprisingly, it is revealed by the in operator existence check). That's because "enumerable" basically means
+//"will be included if the object's properties are iterated through".
+
+        myObject.propertyIsEnumerable( "a" ); // true
+        myObject.propertyIsEnumerable( "b" ); // false
+
+        Object.keys( myObject ); // ["a"]
+        Object.getOwnPropertyNames( myObject ); // ["a", "b"]
+        /*
+         propertyIsEnumerable(..) tests whether the given property name exists directly on the object and is also
+ enumerable:true. Object.keys(..) returns an array of all enumerable properties, whereas Object.getOwnPropertyNames(..)
+ returns an array of all properties, enumerable or not.
+
+         */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

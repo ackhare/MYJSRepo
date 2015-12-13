@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        var myObject = {
+            a: 2
+        };
+
+        var b=Object.getOwnPropertyDescriptor( myObject, "a" );
+        console.log(b);
+        // {
+        //    value: 2,
+        //    writable: true,
+        //    enumerable: true,
+        //    configurable: true
+        // }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

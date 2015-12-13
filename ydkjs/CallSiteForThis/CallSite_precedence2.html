@@ -24,10 +24,12 @@
         //something has been assigned to 2 and which goes to this.a  so when obj1.foo(2) is done this.a is called
         console.log( obj1.a ); // 2
 
-        obj1.foo.call( obj2, 3 );
+        obj1.foo.call( obj2, 3 );//means obj2 will replace obj1 with arg 3
         console.log( obj2.a ); // 3
 
         var bar = new obj1.foo( 4 );
+        //the newly constructed object is set as the this binding for that function call
+        //so binding goes with the object bar instead of obj1
         console.log( obj1.a ); // 2   //It is very important that how behaviour changes on
         console.log( bar.a ); // 4
 

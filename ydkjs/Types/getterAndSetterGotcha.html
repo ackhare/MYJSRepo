@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        var myObject = {
+            // define a getter for `a`
+            get a() {
+                return 2;
+            }
+        };
+
+        myObject.a = 3;
+
+        myObject.a; // 2
+        /*
+         Since we only defined a getter for a, if we try to set the value of a later, the set operation won't throw an error but
+will just silently throw the assignment away. Even if there was a valid setter, our custom getter is hard-coded to
+return only 2, so the set operation would be moot.
+         */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

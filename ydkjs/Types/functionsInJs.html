@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        function foo() {
+            console.log( "foo" );
+        }
+
+        var someFoo = foo;  // variable reference to `foo`
+
+        var myObject = {
+            someFoo: foo
+        };
+
+        foo;                // function foo(){..}
+
+        someFoo;            // function foo(){..}
+
+        myObject.someFoo;   // function foo(){..}
+
+
+
+//        someFoo and myObject.someFoo are just two separate references to the same function, and neither implies anything
+//        about the function being special or "owned" by any other object. If foo() above was defined to have a this
+//        reference inside it, that myObject.someFoo implicit binding would be the only observable difference between the
+//        two references. Neither reference really makes sense to be called a "method".
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

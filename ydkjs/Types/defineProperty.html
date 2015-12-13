@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        var myObject = {};
+/*
+ While we can see what the default values for the property descriptor characteristics are when we create a normal
+ property, we can use Object.defineProperty(..) to add a new property, or modify an existing one (if it's
+ configurable!), with the desired characteristics.
+ */
+        Object.defineProperty( myObject, "a", {
+            value: 2,
+            writable: true,
+            configurable: true,
+            enumerable: true
+        } );
+
+        myObject.a; // 2
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

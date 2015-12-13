@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        //the diffrence between creating by new and literal
+        var strPrimitive = "I am a string";
+        typeof strPrimitive;                            // "string"
+        strPrimitive instanceof String;                 // false
+
+        var strObject = new String( "I am a string" );
+        typeof strObject;                               // "object"
+        strObject instanceof String;                    // true
+
+        // inspect the object sub-type
+        Object.prototype.toString.call( strObject );    // [object String]
+//        We'll see in detail in a later chapter exactly how the Object.prototype.toString... bit works, but briefly, we can
+//inspect the internal sub-type by borrowing the base default toString() method, and you can see it reveals that strObject
+//is an object that was in fact created by the String constructor.
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

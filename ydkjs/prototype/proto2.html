@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+//        Similar to this [[Prototype]] chain look-up process, if you use a for..in loop to iterate over an object, any property
+//that can be reached via its chain (and is also enumerable -- see Chapter 3) will be enumerated. If you use the in
+//operator to test for the existence of a property on an object, in will check the entire chain of the object (regardless
+//of enumerability).
+//
+    var anotherObject = {
+            a: 2
+        };
+
+        // create an object linked to `anotherObject`
+        var myObject = Object.create( anotherObject );
+
+        for (var k in myObject) {
+            console.log("found: " + k);
+        }
+        // found: a
+
+        ("a" in myObject); // true
+    </script>
+</head>
+<body>
+
+</body>
+</html>
