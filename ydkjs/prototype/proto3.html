@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        function Foo() {
+            // ...
+        }
+
+        console.log(Foo.prototype.constructor === Foo); // true
+
+        var a = new Foo();
+        console.log(a.constructor === Foo); // true
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

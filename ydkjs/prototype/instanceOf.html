@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        function Foo() {
+            // ...
+        }
+
+
+
+        var a = new Foo();
+                console.log(a instanceof Foo); // true
+        /*
+         The question instanceof answers is: in the entire [[Prototype]] chain of a, does the object arbitrarily pointed to by
+Foo.prototype ever appear?
+         */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

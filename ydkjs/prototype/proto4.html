@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        function Foo(name) {
+            this.name = name;
+        }
+
+        Foo.prototype.myName = function() {
+            return this.name;
+        };
+
+        var a = new Foo( "a" );
+        var b = new Foo( "b" );
+
+        a.myName(); // "a"
+        b.myName(); // "b"
+        /*
+         This snippet shows two additional "class-orientation" tricks in play:
+         this.name = name: adds the .name property onto
+ each object (a and b, respectively; see Chapter 2 about thisbinding), similar to how class instances encapsulate data
+ values. Foo.prototype.myName = ...: perhaps the more interesting technique, this adds a property (function) to
+ theFoo.prototype object. Now, a.myName() works, but perhaps surprisingly. How?
+         */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+       //Object.create(..) was added in ES5. You may need to support pre-ES5 environments (like older IE's),
+       //so let's take a look at a simple partial polyfill for Object.create(..)
+       //that gives us the capability that we need even in those older JS environments:
+                if (!Object.create) {
+                    Object.create = function(o) {
+                        function F(){}
+                        F.prototype = o;
+                        return new F();
+                    };
+                }
+       //This polyfill works by using a throw-away F function and overriding its .prototype property
+       // to point to the object we want to link to. Then we use new F() construction to make a new object
+       // that will be linked as we specified.
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

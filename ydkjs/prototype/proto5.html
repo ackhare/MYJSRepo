@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        function Foo() { /* .. */ }
+
+        Foo.prototype = { /* .. */ }; // create a new prototype object
+
+
+        var a1 = new Foo();
+        //The below holds only when line number 10 holds
+        console.log(a1.constructor === Foo); // false!
+        console.log(a1.constructor === Object); // true!
+/*
+ What's happening? a1 has no .constructor property, so it delegates up the [[Prototype]] chain to Foo.prototype. But that
+object doesn't have a .constructor either (like the default Foo.prototype object would have had!), so it keeps
+delegating, this time up to Object.prototype, the top of the delegation chain. That object indeed has a .constructor on
+it, which points to the built-in Object(..) function.
+
+ */
+    </script>
+</head>
+<body>
+
+</body>
+</html>
